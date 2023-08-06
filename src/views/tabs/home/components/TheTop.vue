@@ -7,12 +7,19 @@ interface Iprops {
   recomments: ISearchRecomment[]
 }
 
-defineProps<Iprops>()
+interface IEmits {
+  (e: 'searchClick'): void
+}
+
+const props = defineProps<Iprops>();
+
+const emits = defineEmits<IEmits>()
 
 const value = ref('')
 
+
 const handleSearch = (value: string) => {
-  alert(value + '搜索')
+  console.log('handleSearch')
 }
 
 </script>
@@ -33,19 +40,20 @@ const handleSearch = (value: string) => {
 
     <section class="mb-2">
       <Search v-model="value" placeholder="请输入搜索关键词" shape="round" background="transparent"
-              @search="handleSearch">
+              @search="handleSearch"
+              @click-input="emits('searchClick')"
+      >
         <template #right-icon>
-          <div @click="">搜索</div>
+          <div @click="emits('searchClick')">搜索</div>
         </template>
       </Search>
     </section>
     <section class="flex gap-2 mb-2">
-      <span
-          class="flex items-center px-2 bg-white bg-opacity-50 rounded-2xl text-white text-xs hover:bg-opacity-30">色拉</span>
-      <span
-          class="flex items-center px-2 bg-white bg-opacity-50 rounded-2xl text-white text-xs hover:bg-opacity-30">奶茶</span>
-      <span
-          class="flex items-center px-2 bg-white bg-opacity-50 rounded-2xl text-white text-xs hover:bg-opacity-30">西瓜汁</span>
+
+      <span v-for="v of props.recomments" :key="v.value"
+            class="flex items-center px-2 bg-white bg-opacity-50 rounded-2xl text-white text-xs hover:bg-opacity-30">
+        {{ v.label }}
+      </span>
     </section>
 
 

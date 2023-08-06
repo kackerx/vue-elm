@@ -1,4 +1,4 @@
-import axios          from 'axios'
+import axios from 'axios'
 import { showDialog } from 'vant'
 
 const instance = axios.create({ baseURL: '/api' })
