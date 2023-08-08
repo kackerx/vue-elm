@@ -1,10 +1,12 @@
 <script setup lang="ts">
 
-import TheTop               from "@/views/tabs/home/components/TheTop.vue";
-import { ISearchRecomment } from "@/types";
-import SearchView           from "@/views/search/SearchView.vue";
+import TheTop                          from "@/views/tabs/home/components/TheTop.vue";
+import { IHomeInfo, ISearchRecomment } from "@/types";
+import SearchView                      from "@/views/search/SearchView.vue";
 import { useToggle }        from "@/use/useToggle";
-import { watch }            from "vue";
+import { onMounted, watch } from "vue";
+import { useAsync }         from "@/use/useAsync";
+import { fetchHomeData }               from "@/api/home";
 
 const recomments: ISearchRecomment[] = [
   { value: 1, label: '水果' },
@@ -14,13 +16,19 @@ const recomments: ISearchRecomment[] = [
 
 const [isShowSearchView, toggleSearchView] = useToggle(false)
 
+const { data, pending, execute } = useAsync<IHomeInfo>(fetchHomeData, {} as IHomeInfo)
+
 </script>
 
 <template>
-  <transition name="fade">
-    <SearchView v-if="isShowSearchView" @cancel="toggleSearchView"/>
-  </transition>
-  <TheTop :recomments="recomments" @searchClick="toggleSearchView"/>
+  <div class="home-page">
+    <transition name="fade">
+      <SearchView v-if="isShowSearchView" @cancel="toggleSearchView"/>
+    </transition>
+    <TheTop :recomments="recomments" @searchClick="toggleSearchView"/>
+    {{ data }}
+    {{ pending }}
+  </div>
 </template>
 
 <style scoped>

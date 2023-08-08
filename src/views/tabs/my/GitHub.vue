@@ -210,6 +210,75 @@ const setActive = (nav: string) => {
     </div>
 
   </section>
+
+  <main class="container flex mx-auto my-8 px-4">
+    <section class="left w-3/4 mr-8">
+      <div class="mb-4 flex justify-between text-xs">
+
+        <div class="left flex items-center space-x-4">
+          <button class="flex items-center space-x-2 border rounded-lg px-4 py-1 bg-[#f6f8fa]  hover:opacity-70">
+            <svg text="gray" aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16"
+                 data-view-component="true" class="octicon octicon-git-branch">
+              <path
+                  d="M9.5 3.25a2.25 2.25 0 1 1 3 2.122V6A2.5 2.5 0 0 1 10 8.5H6a1 1 0 0 0-1 1v1.128a2.251 2.251 0 1 1-1.5 0V5.372a2.25 2.25 0 1 1 1.5 0v1.836A2.493 2.493 0 0 1 6 7h4a1 1 0 0 0 1-1v-.628A2.25 2.25 0 0 1 9.5 3.25Zm-6 0a.75.75 0 1 0 1.5 0 .75.75 0 0 0-1.5 0Zm8.25-.75a.75.75 0 1 0 0 1.5.75.75 0 0 0 0-1.5ZM4.25 12a.75.75 0 1 0 0 1.5.75.75 0 0 0 0-1.5Z"></path>
+            </svg>
+            <span class="font-semibold">master</span>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-3 h-3">
+              <path fill-rule="evenodd"
+                    d="M12.53 16.28a.75.75 0 01-1.06 0l-7.5-7.5a.75.75 0 011.06-1.06L12 14.69l6.97-6.97a.75.75 0 111.06 1.06l-7.5 7.5z"
+                    clip-rule="evenodd"/>
+            </svg>
+          </button>
+
+          <div class="flex items-center space-x-2">
+            <svg text="gray" aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16"
+                 data-view-component="true" class="octicon octicon-git-branch">
+              <path
+                  d="M9.5 3.25a2.25 2.25 0 1 1 3 2.122V6A2.5 2.5 0 0 1 10 8.5H6a1 1 0 0 0-1 1v1.128a2.251 2.251 0 1 1-1.5 0V5.372a2.25 2.25 0 1 1 1.5 0v1.836A2.493 2.493 0 0 1 6 7h4a1 1 0 0 0 1-1v-.628A2.25 2.25 0 0 1 9.5 3.25Zm-6 0a.75.75 0 1 0 1.5 0 .75.75 0 0 0-1.5 0Zm8.25-.75a.75.75 0 1 0 0 1.5.75.75 0 0 0 0-1.5ZM4.25 12a.75.75 0 1 0 0 1.5.75.75 0 0 0 0-1.5Z"></path>
+            </svg>
+            <span class="font-semibold text-xs">45</span>
+            <span>brances</span>
+          </div>
+        </div><!-- left -->
+
+        <div class="right flex items-center space-x-1">
+          <button class="border rounded-lg px-2 py-1">
+            Go to file
+          </button>
+          <button class="border rounded-lg px-2 py-1 bg-green-600 text-white flex items-center">
+            <span class="font-semibold">Code</span>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-3 h-3">
+              <path fill-rule="evenodd"
+                    d="M12.53 16.28a.75.75 0 01-1.06 0l-7.5-7.5a.75.75 0 011.06-1.06L12 14.69l6.97-6.97a.75.75 0 111.06 1.06l-7.5 7.5z"
+                    clip-rule="evenodd"/>
+            </svg>
+          </button>
+        </div> <!-- right -->
+
+      </div>
+
+      <div class="file-explorer-header flex items-center justify-between p-2 bg-gray-100 border rounded-t-lg">
+        <div class="flex items-center space-x-2 text-xs">
+          <div class="rounded-full overflow-hidden w-6">
+            <img src="https://avatars.githubusercontent.com/u/55371516?v=4" alt="">
+          </div>
+          <span class="font-semibold">Kacker</span>
+          <span class="">Don't use pointer cursor on disabled buttons by default(#24125)</span>
+        </div>
+        <div class="flex items-center space-x-2 text-xs">
+          <span>a7c98s</span>
+          <span>yesterday</span>
+        </div>
+      </div> <!--end file explorer header-->
+
+      <div class="file-explorer"></div>
+    </section>
+
+    <section class="sidebar w-1/4">
+      arstarst arstarst arstarst arstarst arstarst arstarst arstarst arstarst arstarst arstarst arstarst arstarst
+      arstarst arstarst arstarst arstarst arstarst arstarst arstarst arstarst arstarst
+    </section>
+  </main>
 </template>
 
 <style lang="scss" scoped>
