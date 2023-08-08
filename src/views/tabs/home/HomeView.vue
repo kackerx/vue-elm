@@ -3,10 +3,11 @@
 import TheTop                          from "@/views/tabs/home/components/TheTop.vue";
 import { IHomeInfo, ISearchRecomment } from "@/types";
 import SearchView                      from "@/views/search/SearchView.vue";
-import { useToggle }        from "@/use/useToggle";
-import { onMounted, watch } from "vue";
-import { useAsync }         from "@/use/useAsync";
+import { useToggle }                   from "@/use/useToggle";
+import { onMounted, watch }            from "vue";
+import { useAsync }                    from "@/use/useAsync";
 import { fetchHomeData }               from "@/api/home";
+import OpLoadingView                   from "@/components/OpLoadingView.vue";
 
 const recomments: ISearchRecomment[] = [
   { value: 1, label: '水果' },
@@ -26,7 +27,11 @@ const { data, pending, execute } = useAsync<IHomeInfo>(fetchHomeData, {} as IHom
       <SearchView v-if="isShowSearchView" @cancel="toggleSearchView"/>
     </transition>
     <TheTop :recomments="recomments" @searchClick="toggleSearchView"/>
-    {{ data }}
+
+    <OpLoadingView :loading="pending" type="loading">
+<!--      <template #template><div>loading custom default</div></template>-->
+      {{ data }}
+    </OpLoadingView>
     {{ pending }}
   </div>
 </template>
