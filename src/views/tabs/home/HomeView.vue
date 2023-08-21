@@ -29,7 +29,7 @@ const { data, pending, execute } = useAsync<IHomeInfo>(fetchHomeData, {} as IHom
     <TheTop :recomments="recomments" @searchClick="toggleSearchView"/>
 
     <OpLoadingView :loading="pending" type="loading">
-<!--      <template #template><div>loading custom default</div></template>-->
+                  <template #template><div>loading custom default</div></template>
       {{ data }}
     </OpLoadingView>
     {{ pending }}

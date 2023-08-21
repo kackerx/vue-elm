@@ -25,8 +25,8 @@ defineProps<IProps>()
     </slot>
   </div>
 
-  <slot v-else>
-  </slot>
+<!--  <slot v-else>-->
+<!--  </slot>-->
 </template>
 
 <style scoped>
